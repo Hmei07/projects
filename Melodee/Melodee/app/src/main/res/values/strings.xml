@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Melodee</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="informationTabContent">Location:\nRuko Victoria Lane, Jl, Lingkar Barat, R.003/RW.004, Panunggangan, Kec. Pinang, Kota Tangerang, Banten 15143\n\nContact No:\nMelodee Customer Service\n0812-1234-5678</string>
+</resources>

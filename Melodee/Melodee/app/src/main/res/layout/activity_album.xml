@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primaryColor"
+    tools:context=".AlbumActivity">
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="600sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        app:layout_constraintBottom_toTopOf="@+id/navbar"/>
+
+
+
+    <View
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="70sp"
+        android:background="@drawable/box"
+        android:backgroundTint="#313131"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/listView"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16sp"
+        android:text="Album"
+        android:textColor="#F79E3C"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.205"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+    <View
+        android:id="@+id/navbar"
+        android:layout_width="match_parent"
+        android:layout_height="60sp"
+        android:background="@drawable/rectangle"
+        android:backgroundTint="@color/primaryVarColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageButton
+        android:id="@+id/homeBtn"
+        android:layout_width="50sp"
+        android:layout_height="60sp"
+        android:background="#0000"
+        android:layout_marginStart="44sp"
+        android:onClick="goHome"
+        app:layout_constraintBottom_toBottomOf="@+id/navbar"
+        app:layout_constraintStart_toStartOf="@+id/navbar"
+        app:layout_constraintTop_toTopOf="@+id/navbar"
+        android:src="@drawable/homebtn"
+        android:scaleType="fitXY"/>
+
+    <ImageButton
+        android:id="@+id/albumBtn"
+        android:layout_width="50sp"
+        android:layout_height="60sp"
+        android:layout_marginStart="40sp"
+        android:background="#0000"
+        android:onClick="goAlbum"
+        app:layout_constraintBottom_toBottomOf="@+id/navbar"
+        app:layout_constraintStart_toEndOf="@+id/homeBtn"
+        app:layout_constraintTop_toTopOf="@+id/navbar"
+        app:layout_constraintVertical_bias="0.538"
+        android:src="@drawable/albumbtn"
+        android:scaleType="fitXY"/>
+
+    <ImageButton
+        android:id="@+id/aboutUsBtn"
+        android:layout_width="60sp"
+        android:layout_height="60sp"
+        android:layout_marginStart="40sp"
+        android:background="#0000"
+        android:onClick="goAboutUs"
+        app:layout_constraintBottom_toBottomOf="@+id/navbar"
+        app:layout_constraintStart_toEndOf="@+id/albumBtn"
+        app:layout_constraintTop_toTopOf="@+id/navbar"
+        app:layout_constraintVertical_bias="0.538"
+        android:src="@drawable/aboutusbtn"
+        android:scaleType="fitXY"/>
+
+    <ImageButton
+        android:id="@+id/logOutBtn"
+        android:layout_width="60sp"
+        android:layout_height="60sp"
+        android:layout_marginStart="40sp"
+        android:background="#0000"
+        android:onClick="goLogOut"
+        app:layout_constraintBottom_toBottomOf="@+id/navbar"
+        app:layout_constraintStart_toEndOf="@+id/aboutUsBtn"
+        app:layout_constraintTop_toTopOf="@+id/navbar"
+        app:layout_constraintVertical_bias="0.538"
+        android:src="@drawable/logoutbtn"
+        android:scaleType="fitXY"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
