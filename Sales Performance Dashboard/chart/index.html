@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Sales Performance Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    
+</head>
+
+<body>
+    <!-- <div class="judul">Sales Performance Dashboard</div> -->
+    <img src="asset/Header_Web_Rev_2-01.png " style="width: 100%;">
+
+    <div class="topnav">
+        <a class="active" href="index.html">Home</a>
+        <a href="transactions.html">All Transactions</a>
+        <p style="padding-left: 80%;">Today's date: 31 Desember 2020</p>
+    </div>
+
+
+    <br>
+    <div class="content">
+
+        <div class="baris1">
+            <div class="box-ku">
+                <h2>Total Revenue</h2>
+                <div class="totalrev" id="totalrevv">
+                    <h1>$</h1>
+                </div>
+                <div class="totalrevbelow">
+                    <div class="previouscontainer">
+                        <div id="previous"></div>
+                        <div id="previous2"></div>
+                    </div>
+                    <div class="changecontainer">
+                        <div id="change"></div>
+                        <div id="change2"></div>
+                    </div>
+                    <div class="trendcontainer">
+                        <div id="trend"></div>
+                        <div id="trend2"></div>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+            <div class="box-ku">
+                <div class="avgContainer1">
+                    <h2 style="padding-right: 10%;">Average Monthly Revenue</h2>
+                    <div class="dropdown">
+                        <button onclick="drpdwn1()" class="dropbtn" id="dropbtnID">2020</button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <a onclick="drawChart4(2016, 0)">2016</a>
+                            <a onclick="drawChart4(2017, 12)">2017</a>
+                            <a onclick="drawChart4(2018, 24)">2018</a>
+                            <a onclick="drawChart4(2019, 36)">2019</a>
+                            <a onclick="drawChart4(2020, 48)">2020</a>
+                        </div>
+                    </div>
+                    <script>
+                        function drpdwn1() {
+                            document.getElementById("myDropdown").classList.toggle("show");
+                        }
+
+                        // Close the dropdown menu if the user clicks outside of it
+                        window.onclick = function (event) {
+                            if (!event.target.matches('.dropbtn')) {
+                                var dropdowns = document.getElementsByClassName("dropdown-content");
+                                var i;
+                                for (i = 0; i < dropdowns.length; i++) {
+                                    var openDropdown = dropdowns[i];
+                                    if (openDropdown.classList.contains('show')) {
+                                        openDropdown.classList.remove('show');
+                                    }
+                                }
+                            }
+                        }
+                    </script>
+                </div>
+
+
+                <div id="AvgRevenue_chart_div"></div>
+            </div>
+
+            <div class="box-ku">
+                <h2>Top Selling Product</h2>
+                <div id="Sales_chart_div"></div>
+            </div>
+        </div>
+
+        <div class="baris2">
+            <div class="box-ku2">
+                <h2>Product Availability</h2>
+                <div id="AvailStocks_chart_div"></div>
+            </div>
+
+            <div class="box-ku2">
+                <div class="avgContainer">
+                    <h2 style="padding-right: 10px; color: #30ACE7;">This Year </h2>
+                    <h2 style="padding-right: 10px;">VS </h2>
+
+
+                    <div class="divider">
+                        <div class="dropdown">
+                            <button onclick="drpdwn3()" class="dropbtn" id="dropbtnID3"
+                                style="background-color: #D25731;">2019</button>
+                            <div id="myDropdown3" class="dropdown-content">
+                                <a onclick="drawChart1(2016, -1)">2016</a>
+                                <a onclick="drawChart1(2017, 11)">2017</a>
+                                <a onclick="drawChart1(2018, 23)">2018</a>
+                                <a onclick="drawChart1(2019, 35)">2019</a>
+                            </div>
+                        </div>
+                        <script>
+                            function drpdwn3() {
+                                document.getElementById("myDropdown3").classList.toggle("show");
+                            }
+
+                            // Close the dropdown menu if the user clicks outside of it
+                            window.onclick = function (event) {
+                                if (!event.target.matches('.dropbtn')) {
+                                    var dropdowns = document.getElementsByClassName("dropdown-content");
+                                    var i;
+                                    for (i = 0; i < dropdowns.length; i++) {
+                                        var openDropdown = dropdowns[i];
+                                        if (openDropdown.classList.contains('show')) {
+                                            openDropdown.classList.remove('show');
+                                        }
+                                    }
+                                }
+                            }
+                        </script>
+                    </div>
+
+                </div>
+
+
+                <div id="Revenue_chart_div"></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart1);
+        google.charts.setOnLoadCallback(drawChart2);
+        google.charts.setOnLoadCallback(drawChart3);
+        google.charts.setOnLoadCallback(drawChart4);
+
+        // revenue comparison chart
+        console.log(revenueMonth)
+
+        function drawChart1(year = 2019, code = 35) {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Month');
+
+            //buat kolom untuk main year (2020)
+            data.addColumn('number', 2020);
+
+            //buat kolom untuk year yang dibandingkan (2019/2018/2017/2016)
+            //sementara masukin tahunnya manual
+            data.addColumn('number', year);
+            //console.log(data);
+
+            //buat baris untuk monthly revenue tahun 2020 dan 2019
+            var monthCount = 1;
+            var monthOnClick = 35; // 2019=35, 2018=23, 2017 = 11, 2016=-1
+            for (var i = 1; i <= 12; i++) {
+                data.addRows([
+                    [monthTemp[i - 1], revenueMonth[i + 47], revenueMonth[i + code]]
+                ]);
+                monthCount++;
+            }
+            console.log(year)
+            document.getElementById("dropbtnID3").innerHTML = year
+
+            console.log(monthCount, revenueMonth[monthCount + 47 - 1], revenueMonth[monthCount + monthOnClick - 1]);
+
+
+            // Set options for Revenue's line chart.
+            var options = {
+                hAxis: {
+                    title: 'Month'
+                },
+                vAxis: {
+                    title: 'Revenue($)'
+                },
+                height: 300,
+                chartArea: { width: '75%', height: '75%' },
+                legend: { position: 'top' },
+                backgroundColor: '#000',
+                colors: ['#30ace7', '#d25731'],
+                explorer: { actions: ['dragToZoom', 'rightClickToReset'] },
+                animation: {
+                    duration: 2000,
+                    easing: 'inAndOut',
+                    startup: true
+                }
+            };
+            options.hAxis = options.vAxis = { textStyle: { color: '#ccc' } };
+            options.legend.textStyle = options.hAxis.textStyle;
+
+            // Instantiate and draw the chart for Revenue.
+            var chart = new google.visualization.LineChart(document.getElementById('Revenue_chart_div'));
+            chart.draw(data, options);
+        }
+
+        // product availability chart
+        function drawChart2() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Car Category');
+            data.addColumn('number', 'Total');
+            data.addColumn({ role: 'style' });
+            var tempArr = [sedanStock, coupeStock, suvStock, pickupStock, sportscarStock];
+
+            tempArr.sort(function (a, b) { return a - b });
+            console.log(tempArr)
+            var sedanbool, coupebool, suvbool, pickupbool, sportscarbool;
+            sedanbool = coupebool = suvbool = pickupbool = sportscarbool = false;
+            for (var i = 0; i < 5; i++) {
+                var tempRowName = ""
+                var tempRowVal
+                var tempRowStyle
+                if (tempArr[i] == sedanStock && sedanbool == false) {
+                    tempRowName = "Sedan"
+                    tempRowVal = parseInt(tempArr[i])
+                    tempRowStyle = tempColor[0]
+                    sedanbool = true
+                    // data.addRows([['Sedan', parseInt(tempArr[i]), tempColor[0]]]);
+                }
+                else if (tempArr[i] == coupeStock && coupebool == false) {
+                    tempRowName = "Coupe"
+                    tempRowVal = parseInt(tempArr[i])
+                    tempRowStyle = tempColor[1]
+                    coupebool = true
+                    // data.addRows([['Coupe', parseInt(tempArr[i]), tempColor[1]]]);
+                }
+                else if (tempArr[i] == suvStock && suvbool == false) {
+                    tempRowName = "SUV"
+                    tempRowVal = parseInt(tempArr[i])
+                    tempRowStyle = tempColor[2]
+                    suvbool = true
+                    // data.addRows([['SUV', parseInt(tempArr[i]), tempColor[2]]]);
+                }
+                else if (tempArr[i] == pickupStock && pickupbool == false) {
+                    tempRowName = "Pickup"
+                    tempRowVal = parseInt(tempArr[i])
+                    tempRowStyle = tempColor[3]
+                    pickupbool = true
+                    // data.addRows([['Pickup', parseInt(tempArr[i]), tempColor[3]]]);
+                }
+                else if (tempArr[i] == sportscarStock && sportscarbool == false) {
+                    tempRowName = "Sports Car"
+                    tempRowVal = parseInt(tempArr[i])
+                    tempRowStyle = tempColor[4]
+                    sportscarbool = true
+                    // data.addRows([['Sports Car', parseInt(tempArr[i]), tempColor[4]]]);
+                }
+                data.addRows([[tempRowName, tempRowVal, tempRowStyle]])
+
+            }
+
+            console.log(tempArr);
+            var view = new google.visualization.DataView(data);
+            view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+            // Set options for Available Stocks's pie chart.
+            var options = {
+                title: 'Product Availability',
+                chartArea: { width: '70%', height: '75%' },
+                legend: { position: 'left' },
+                backgroundColor: '#000',
+                height: 300,
+                animation: {
+                    duration: 2000,
+                    easing: 'inAndOut',
+                    startup: true
+                }
+
+            };
+            options.hAxis = options.vAxis = { textStyle: { color: '#ccc' } };
+            options.legend.textStyle = options.hAxis.textStyle;
+
+            // Instantiate and draw the chart for Available Stocks.
+            var chart = new google.visualization.ColumnChart(document.getElementById('AvailStocks_chart_div'));
+            chart.draw(view, options);
+        }
+
+        //  top selling product chart
+        function drawChart3() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Car Model');
+            data.addColumn('number', 'Sum');
+            data.addColumn({ role: 'style' });
+
+            var topSellArr = [topSell1, topSell2, topSell3];
+            var topSellCategoryArr = [topSell1Category, topSell2Category, topSell3Category];
+            var intTopSellArr = [parseInt(intTopSell1), parseInt(intTopSell2), parseInt(intTopSell3)];
+            var colorTemp = ["", "", ""];
+            console.log(topSellArr, topSellCategoryArr);
+            for (var i = 0; i < 3; i++) {
+                if (topSellCategoryArr[i] == 'Sedan') {
+                    data.addRows([[topSellArr[i], intTopSellArr[i], tempColor[4]]]);
+                    colorTemp[i] = "#009E73";
+                    console.log("Sedan")
+                }
+                else if (topSellCategoryArr[i] == 'Coupe') {
+                    data.addRows([[topSellArr[i], intTopSellArr[i], tempColor[1]]]);
+                    colorTemp[i] = "#F0E442";
+                    console.log("coupe");
+                }
+                else if (topSellCategoryArr[i] == 'SUV') {
+                    data.addRows([[topSellArr[i], intTopSellArr[i], tempColor[2]]]);
+                    colorTemp[i] = "#0072B2";
+                    console.log("suv");
+                }
+                else if (topSellCategoryArr[i] == 'Pickup') {
+                    data.addRows([[topSellArr[i], intTopSellArr[i], tempColor[3]]]);
+                    colorTemp[i] = "#D55E00";
+                    console.log("pi8ckup");
+                }
+                else if (topSellCategoryArr[i] == 'Sports car') {
+                    data.addRows([[topSellArr[i], intTopSellArr[i], tempColor[0]]]);
+                    colorTemp[i] = "#CC79A7";
+                    console.log("sport");
+                }
+            }
+
+            var options = {
+                title: 'Top Selling Product',
+                pieSliceText: 'value',
+                chartArea: { width: '70%', height: '75%' },
+                legend: { position: 'right' },
+                backgroundColor: '#000',
+                height: 300,
+                slices: [{ color: colorTemp[0] }, { color: colorTemp[1] }, { color: colorTemp[2] }],
+                slices: {
+                    2: {offset: 0.1}
+                }
+            };
+            options.hAxis = options.vAxis = { textStyle: { color: '#ccc' } };
+            options.legend.textStyle = options.hAxis.textStyle;
+
+            // Instantiate and draw the chart
+            var chart = new google.visualization.PieChart(document.getElementById('Sales_chart_div'));
+            chart.draw(data, options);
+        }
+
+        // average monthly revenue
+        function drawChart4(year = 2020, code = 48) {
+            document.getElementById("dropbtnID").innerHTML = year
+            var data = new google.visualization.DataTable();
+
+            data.addColumn('string', 'Month');
+            data.addColumn('number', 'AvgRevenue');
+
+            for (var i = 0; i < 12; i++) {
+                if (monthlyRevenueCount[i + code] == 0) {
+                    data.addRows([
+                        [monthTemp[i], (monthlyRevenue[i + code] / 1)]
+                    ]);
+                }
+                else {
+                    data.addRows([
+                        [monthTemp[i], (monthlyRevenue[i + code] / monthlyRevenueCount[i + code])]
+                    ]);
+                }
+
+            }
+
+            var options = {
+                title: 'Product Availability',
+                chartArea: { width: '70%', height: '75%' },
+                legend: { position: 'left' },
+                backgroundColor: '#000',
+                height: 300,
+                colors: ['#30ace7'],
+                animation: {
+                    duration: 2000,
+                    easing: 'inAndOut',
+                    startup: true
+                }
+            };
+            options.hAxis = options.vAxis = { textStyle: { color: '#ccc' } };
+            options.legend.textStyle = options.hAxis.textStyle;
+
+            // Instantiate and draw the chart
+            var chart = new google.visualization.LineChart(document.getElementById('AvgRevenue_chart_div'));
+            chart.draw(data, options);
+        }
+
+
+
+    </script>
+</body>
+
+</html>

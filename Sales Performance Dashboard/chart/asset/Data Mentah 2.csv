@@ -1,0 +1,101 @@
+Category,Model,Factory Price,Model Stock,Date,Month,Year
+Pickup,Honda Ridgeline,36490,49,3,9,2020
+Sedan,Honda Civic,21750,49,23,2,2018
+Sports car,Porsche 911,97400,49,7,3,2019
+Sedan,Honda Civic,21750,48,24,4,2020
+Sports car,Porsche 911,97400,48,16,5,2019
+Coupe,Chevrolet Corvette,59900,49,17,6,2019
+SUV,Chevrolet Tahoe,49000,49,8,1,2019
+SUV,Ford Expedition,49995,49,29,8,2018
+Pickup,Chevy Colorado,21300,49,27,4,2016
+Coupe,Chevrolet Corvette,59900,48,10,8,2016
+SUV,Nissan Kicks,19550,49,8,10,2016
+Sedan,Toyota Corolla,20290,49,28,10,2020
+Pickup,Jeep Gladiator,33900,49,25,8,2019
+SUV,Ford Expedition,49995,48,6,4,2019
+Coupe,Audi A5,44000,49,29,4,2016
+SUV,Hyundai Kona,20500,49,7,10,2017
+Sedan,Honda Civic,21750,47,18,4,2016
+Sedan,Nissan Altima,24100,49,11,10,2016
+Pickup,Honda Ridgeline,36490,48,10,9,2020
+Sports car,Mazda Miata,33000,49,12,1,2018
+Sports car,Porsche 911,97400,47,18,9,2017
+Pickup,Jeep Gladiator,33900,48,3,1,2019
+Coupe,Porsche Boxster,59600,49,9,9,2016
+SUV,Hyundai Kona,20500,48,2,6,2019
+Coupe,Porsche Boxster,59600,48,26,7,2017
+SUV,Nissan Kicks,19550,48,28,3,2018
+SUV,Chevrolet Tahoe,49000,48,25,6,2016
+Coupe,Porsche Boxster,59600,47,29,7,2020
+Coupe,Porsche Boxster,59600,46,26,4,2017
+Sedan,Toyota Corolla,20290,48,16,3,2016
+SUV,Ford Expedition,49995,47,12,2,2018
+Pickup,Honda Ridgeline,36490,47,4,11,2020
+Coupe,Chevrolet Corvette,59900,47,24,11,2019
+Sports car,Mazda Miata,33000,48,12,2,2018
+Pickup,Jeep Gladiator,33900,47,25,2,2017
+Coupe,Audi A5,44000,48,12,2,2019
+SUV,Nissan Kicks,19550,47,23,2,2019
+Sports car,Mazda Miata,33000,47,11,10,2017
+Pickup,Honda Ridgeline,36490,46,28,2,2016
+Sedan,Toyota Corolla,20290,47,17,3,2019
+Coupe,Chevrolet Corvette,59900,46,14,3,2017
+Sports car,Porsche 911,97400,46,23,10,2018
+Coupe,Audi A5,44000,47,30,1,2018
+Sports car,Porsche 911,97400,45,5,3,2018
+Coupe,Chevrolet Corvette,59900,45,19,1,2016
+Sedan,Toyota Corolla,20290,46,28,11,2019
+SUV,Nissan Kicks,19550,46,19,1,2020
+Coupe,Chevrolet Corvette,59900,44,17,8,2020
+Sports car,Dodge Challenger,34995,49,23,3,2020
+Sports car,Dodge Challenger,34995,48,9,9,2018
+Sedan,Toyota Corolla,20290,45,7,11,2019
+Sports car,Mazda Miata,33000,46,5,7,2019
+Coupe,Porsche Boxster,59600,45,9,8,2016
+Pickup,GMC Canyon,26400,49,5,8,2016
+Pickup,Chevy Colorado,21300,48,10,7,2016
+Pickup,Jeep Gladiator,33900,46,6,11,2016
+Pickup,GMC Canyon,26400,48,9,9,2017
+Sports car,Mazda Miata,33000,45,29,5,2019
+Sedan,Honda Civic,21750,46,4,11,2019
+SUV,Nissan Kicks,19550,45,15,10,2017
+Sedan,Nissan Altima,24100,48,25,6,2020
+SUV,Nissan Kicks,19550,44,22,7,2020
+Sedan,Nissan Altima,24100,47,30,6,2017
+Sports car,Dodge Challenger,34995,47,11,6,2018
+Sports car,Porsche 911,97400,44,8,11,2016
+SUV,Hyundai Kona,20500,47,22,1,2020
+Pickup,Honda Ridgeline,36490,45,9,10,2018
+Sports car,Mazda Miata,33000,44,26,11,2016
+Sedan,Nissan Altima,24100,46,15,2,2018
+Pickup,Chevy Colorado,21300,47,15,11,2020
+Sports car,Aston Martin Vantage,139000,49,25,2,2019
+Sedan,Honda Accord,24270,49,28,7,2017
+Pickup,GMC Canyon,26400,47,20,10,2016
+SUV,Chevrolet Tahoe,49000,47,19,4,2018
+SUV,Ford Expedition,49995,46,5,2,2018
+Sports car,Aston Martin Vantage,139000,48,26,9,2019
+Sedan,Honda Civic,21750,45,12,9,2020
+Coupe,Ford Mustang,26670,49,13,3,2016
+Pickup,Honda Ridgeline,36490,44,25,2,2016
+Sports car,Dodge Challenger,34995,46,15,4,2018
+Coupe,Audi A5,44000,46,15,10,2017
+Sedan,Honda Accord,24270,48,9,4,2016
+Coupe,Ford Mustang,26670,48,16,5,2018
+SUV,Nissan Kicks,19550,43,3,5,2017
+SUV,Ford Expedition,49995,45,12,1,2019
+Pickup,GMC Canyon,26400,46,4,2,2016
+Sports car,Dodge Challenger,34995,45,2,8,2016
+SUV,Nissan Kicks,19550,42,3,6,2018
+Sedan,Honda Civic,21750,44,18,11,2017
+Pickup,Chevy Colorado,21300,46,24,11,2019
+SUV,Nissan Kicks,19550,41,26,5,2016
+SUV,Hyundai Kona,20500,46,17,1,2018
+Pickup,Chevy Colorado,21300,45,27,8,2020
+Pickup,Honda Ridgeline,36490,43,8,10,2017
+Sedan,Toyota Corolla,20290,44,10,1,2016
+Sedan,Nissan Altima,24100,45,19,1,2018
+SUV,Ford Expedition,49995,44,12,1,2016
+SUV,Hyundai Kona,20500,45,21,7,2016
+SUV,Ford Expedition,49995,43,30,5,2016
+Pickup,Jeep Gladiator,33900,45,3,5,2016
