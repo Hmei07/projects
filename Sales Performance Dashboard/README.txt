@@ -1,15 +1,17 @@
-Langkah-langkah penggunaan dashboard
+#HTML, CSS, JS
 
-Cara 1:
+How to open the dashboard (there are 2 ways):
+
+1st method:
 1. Install XAMPP
-2. Extract chart.zip dan letakan folder chart ke dalam folder htdocs yang terdapat pada folder instalasi XAMPP
-3. Pada folder instalasi XAMPP, cari file yang bernama xampp_start.exe dan klik 2 kali file tersebut
-4. Buka web browser, ketik localhost/chart/index.html
+2. Download and put the "chart" folder into "htdocs" folder in XAMPP directory
+3. In XAMPP directory, find and open file named "xampp_start.exe"
+4. Open your web browser (Google Chrome preferred) and type "localhost/chart/index.html" without the quotation marks
 
-Cara 2:
+2nd method:
 1. Install Visual Studio Code
-2. Unduh extension bernama Live Server
-3. Extract chart.zip dan letakan folder chart ke dalam workspace visual studio code
-4. Klik kanan file index.html yang terdapat pada workspace dan klik pilihan 'Open with Live Server'
+2. Download an extension named "Live Server"
+3. Download the "chart" folder and open it with Visual Studio Code
+4. Open the "index.html" file and run it with the Live Server by right-clicking the code and choose "Open with Live Server"
 
-Tampilan yg terlihat seharusnya kurang lebih seperti gambar pada file "home page.png" dan "transaction page.png"
+The dashboard should look like the "home page.png" and "transaction page.png"
