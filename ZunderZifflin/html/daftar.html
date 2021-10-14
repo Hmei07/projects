@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar | Zunder Zifflin</title>
+    <link rel="stylesheet" href="../css/styledaftar.css">
+    <script src="../script/registScript.js" defer></script>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <a href="home.html"><img src="../assets/logo hci.png" alt="" width="200px"></a>
+        </div>
+        <div class="navigation">
+            <div class="dropdown">
+                <button class="dropbtn">Menu
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="produk.html">Produk</a>
+                    <a href="tentangkami.html">Tentang Kami</a>
+                    <a href="kontakkami.html">Kontak Kami</a>
+                    <a href="daftar.html">Daftar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <h2>Registration Form</h2>
+        <center>
+            <form action="home.html" id="myForm">
+            
+                <table>
+                    <!-- Name -->
+                    <tr>
+                    <td> Name </td>
+                    <td> 
+                        <input type="text" name="nameTxt" >
+                        </td>
+                    </tr>
+
+                    <!-- Email -->
+                    <tr>
+                        <td> Email </td>
+                        <td>
+                            <input type="text" name="emailTxt">
+                        </td>
+                    </tr>
+
+                    <!-- Gender -->
+                    <tr>
+                        <td> Gender</td>
+                        <td> 
+                            <input type="radio" name="genderTxt" value="Male" id="male"> 
+                            <label for="male">Male</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td> 
+                            <input type="radio" name="genderTxt" value="Female"> Female
+                        </td>
+                    </tr>
+    
+                    <!-- Address  -->
+                    <tr>
+                        <td> Address </td>
+                        <td> 
+                            <!-- <input type="text" name="addressTxt"> -->
+                            <textarea name="addressTxt" id="" cols="30" rows="10"></textarea>
+                        </td>
+                    </tr>
+    
+                    <!-- City -->
+                    <tr>
+                        <td> City </td>
+                        <td> 
+                            <select name="cityTxt" id="">
+                                <option value="">-- SELECT CITY --</option>
+                                <option value="Jakarta">Jakarta</option>
+                                <option value="Bandung">Bandung</option>
+                                <option value="Bogor">Bogor</option>
+                                <option value="Bekasi">Bekasi</option>
+                            </select>
+                        </td>
+                    </tr>
+                    
+                    
+                    <!-- Agree -->
+                    <tr>
+                        <td colspan="2"> 
+                            <input type="checkbox" name="agree" value="true" id="agree" > 
+                            <label for="agree">I agree to this company's term and services </label>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td colspan="2">
+                            <p id="errorMessage" style="color: red;"></p>
+                        </td>
+                    </tr>
+    
+                    <!-- Button -->
+                    <tr>
+                        <td colspan="2" style="text-align: center;">
+                            <button type="submit">
+                                Submit
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </center>
+        
+    </div>
+
+    <div class="footer">
+        <div class="sosmed">
+            <P>Sosial Media</P>
+            <div class="sosmedcontainer">
+                <div class="IG">
+                    <a href="https://www.instagram.com" target="_blank"><img src="../assets/instagram.png" alt="" width="30px" height="30px"></a>
+                </div>
+                <div class="FB">
+                    <a href="https://www.facebook.com" target="_blank"><img src="../assets/facebook.png" alt="" width="30px" height="30px"></a>
+                </div>
+            </div>
+            
+        </div>
+        <div class="text-footer">
+            <p>©Zunder Zifflin 2021</p>
+        </div>
+        <div class="Button-Footer">
+            <div class="TentangKami">
+                <a href="tentangkami.html">Tentang Kami</a>
+            </div>
+            <div class="KontakKami">
+                <a href="kontakkami.html">Kontak Kami</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
